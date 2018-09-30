@@ -3,7 +3,7 @@
 #include <openssl/pem.h>
 #include <openssl/hmac.h>
 
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
 // ssl < 1.1
 class EvpMdCtx {
  public:
